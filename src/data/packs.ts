@@ -1,0 +1,137 @@
+import { Pack } from '../types';
+
+export const PACKS: Pack[] = [
+  {
+    id: '01',
+    number: '01',
+    title: 'RESPOSTAS QUE AGENDAM',
+    subtitle: 'Transforme dúvidas e objeções em oportunidades de consulta.',
+    targetCount: 45,
+    categories: [
+      {
+        id: 'primeiro-atendimento',
+        packId: '01',
+        title: 'Primeiro Atendimento',
+        description: 'Primeiro contato com a paciente: acolhimento, qualificação e direcionamento elegante.',
+        targetCount: 8,
+      },
+      {
+        id: 'precos-valores',
+        packId: '01',
+        title: 'Preços e Valores',
+        description: 'Como responder sobre valores de botox, preenchimento e planos de tratamento com autoridade.',
+        targetCount: 10,
+      },
+      {
+        id: 'objecoes-comerciais',
+        packId: '01',
+        title: 'Objeções Comerciais',
+        description: 'Superação respeitosa de "vou pensar", "falar com o marido", "achei caro" e concorrência.',
+        targetCount: 9,
+      },
+      {
+        id: 'conducao-consulta',
+        packId: '01',
+        title: 'Condução para Consulta',
+        description: 'Fechamento natural da conversa em horário confirmado, sem pressão comercial.',
+        targetCount: 8,
+      },
+      {
+        id: 'follow-up-comercial',
+        packId: '01',
+        title: 'Follow-up Comercial',
+        description: 'Retomada de pacientes que pararam de responder após pedir informações ou orçamentos.',
+        targetCount: 10,
+      },
+    ],
+  },
+  {
+    id: '02',
+    number: '02',
+    title: 'AGENDA PROTEGIDA',
+    subtitle: 'Confirme consultas, recupere ausências e organize melhor seus horários.',
+    targetCount: 35,
+    categories: [
+      {
+        id: 'apos-agendamento',
+        packId: '02',
+        title: 'Após o Agendamento',
+        description: 'Boas-vindas, orientações pré-consulta, localização e preparo para o procedimento.',
+        targetCount: 6,
+      },
+      {
+        id: 'lembretes-inteligentes',
+        packId: '02',
+        title: 'Lembretes Inteligentes',
+        description: 'Confirmações de presença que geram compromisso real e reduzem faltas.',
+        targetCount: 9,
+      },
+      {
+        id: 'reagendamentos',
+        packId: '02',
+        title: 'Reagendamentos',
+        description: 'Manejo elegante de pedidos de troca de horário sem desorganizar a grade da clínica.',
+        targetCount: 7,
+      },
+      {
+        id: 'recuperacao-faltas',
+        packId: '02',
+        title: 'Recuperação de Faltas',
+        description: 'Abordagem imediata e cordial para no-show e cancelamentos de última hora.',
+        targetCount: 7,
+      },
+      {
+        id: 'otimizacao-horarios',
+        packId: '02',
+        title: 'Otimização de Horários',
+        description: 'Lista de espera ativa, encaixes estratégicos e preenchimento de buracos na agenda.',
+        targetCount: 6,
+      },
+    ],
+  },
+  {
+    id: '03',
+    number: '03',
+    title: 'PACIENTES DE VOLTA',
+    subtitle: 'Retome conversas e crie oportunidades de acompanhamento e retorno.',
+    targetCount: 40,
+    categories: [
+      {
+        id: 'leads-antigos',
+        packId: '03',
+        title: 'Leads Antigos',
+        description: 'Reativação sutil de contatos adormecidos que nunca chegaram a comparecer.',
+        targetCount: 8,
+      },
+      {
+        id: 'avaliacoes-nao-convertidas',
+        packId: '03',
+        title: 'Avaliações Não Convertidas',
+        description: 'Acompanhamento de pacientes que fizeram consulta avaliativa mas não iniciaram o plano.',
+        targetCount: 8,
+      },
+      {
+        id: 'reavaliacoes-hof',
+        packId: '03',
+        title: 'Reavaliações em HOF',
+        description: 'Convite para retorno de 15 dias (retoque/avaliação de botox) e manutenção de bioestimulador.',
+        targetCount: 9,
+      },
+      {
+        id: 'relacionamento-pacientes',
+        packId: '03',
+        title: 'Relacionamento com Pacientes',
+        description: 'Pós-procedimento imediato (24h/72h), aniversários e datas especiais com elegância.',
+        targetCount: 8,
+      },
+      {
+        id: 'recuperacao-contatos',
+        packId: '03',
+        title: 'Recuperação de Contatos',
+        description: 'Pacientes que sumiram há mais de 6 meses para recall de manutenção preventiva.',
+        targetCount: 7,
+      },
+    ],
+  },
+];
+
