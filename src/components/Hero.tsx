@@ -53,10 +53,10 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Monumental Launch Headline */}
-        <h1 className="font-serif text-[38px] leading-[1.06] sm:text-6xl md:text-7xl lg:text-[80px] font-normal text-espresso tracking-tight max-w-4xl mx-auto mb-6 sm:mb-8 text-balance">
-          Sua recepção segura nas conversas.{' '}
-          <span className="block mt-1 sm:mt-2 text-cocoa italic font-serif font-light">
-            Sua agenda de HOF <span className="underline decoration-gold-warm decoration-2 underline-offset-8">sempre cheia.</span>
+        <h1 className="font-serif text-[42px] leading-[1.08] sm:text-6xl md:text-7xl lg:text-[82px] font-normal text-espresso tracking-tight max-w-4xl mx-auto mb-6 sm:mb-8 text-balance">
+          Sua agenda de HOF{' '}
+          <span className="text-cocoa italic font-serif font-light underline decoration-gold-warm decoration-2 underline-offset-8">
+            sempre cheia.
           </span>
         </h1>
 
