@@ -16,14 +16,6 @@ export const Hero: React.FC = () => {
     }
   };
 
-  const scrollToModules = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const el = document.getElementById('modulos');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className="w-full pt-10 pb-14 sm:pt-18 sm:pb-24 border-b border-borderline/80 bg-ivory relative overflow-hidden">
       {/* Background Monumental Editorial Monogram & Arcs (Inspired by reference launch aesthetic) */}
@@ -73,23 +65,15 @@ export const Hero: React.FC = () => {
           As <strong>120 respostas prontas</strong> de WhatsApp para transformar perguntas sobre preços de Botox e procedimentos em consultas confirmadas, blindar horários e resgatar pacientes antigos.
         </p>
 
-        {/* Primary Launch Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-14">
+        {/* Primary Launch Action Button */}
+        <div className="flex items-center justify-center mb-10 sm:mb-14">
           <a
             href="#biblioteca"
             onClick={scrollToLibrary}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 sm:px-9 py-4 rounded-xl bg-espresso hover:bg-cocoa text-ivory text-xs sm:text-[13px] uppercase tracking-[0.16em] font-semibold transition-all duration-200 shadow-luxury-card hover:shadow-luxury-hover border border-gold-dark/40 active:scale-[0.98] group"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 sm:px-10 py-4 rounded-xl bg-espresso hover:bg-cocoa text-ivory text-xs sm:text-[13px] uppercase tracking-[0.16em] font-semibold transition-all duration-200 shadow-luxury-card hover:shadow-luxury-hover border border-gold-dark/40 active:scale-[0.98] group"
           >
             <span>Acessar os 120 Scripts Agora</span>
             <ArrowDown className="w-4 h-4 text-gold group-hover:translate-y-1 transition-transform stroke-[2]" />
-          </a>
-
-          <a
-            href="#modulos"
-            onClick={scrollToModules}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-xl bg-surface hover:bg-champagne/40 text-espresso text-xs sm:text-[13px] uppercase tracking-[0.14em] font-medium transition-all duration-200 border border-sand hover:border-gold-dark/60 shadow-luxury-subtle"
-          >
-            <span>Conhecer os 3 Módulos</span>
           </a>
         </div>
 
