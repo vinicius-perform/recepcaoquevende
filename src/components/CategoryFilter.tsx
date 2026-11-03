@@ -24,15 +24,15 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
         <button
           type="button"
           onClick={() => onSelectCategory(null)}
-          className={`flex-shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium tracking-wide transition-all select-none border focus:outline-none focus-visible:ring-1 focus-visible:ring-espresso ${
+          className={`flex-shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-medium tracking-wide transition-all duration-200 ease-out active:scale-[0.97] select-none border focus:outline-none focus-visible:ring-1 focus-visible:ring-espresso cursor-pointer ${
             selectedCategoryId === null
-              ? 'bg-espresso text-ivory border-espresso shadow-luxury-subtle'
-              : 'bg-surface text-espresso/70 hover:text-espresso border-borderline hover:border-sand hover:bg-champagne/30'
+              ? 'bg-espresso text-ivory border-espresso shadow-luxury-subtle font-semibold'
+              : 'bg-surface text-espresso/75 hover:text-espresso border-borderline hover:border-sand/90 hover:bg-champagne/30'
           }`}
         >
           <span>Todas</span>
           <span
-            className={`text-[10.5px] font-mono ${
+            className={`text-[10.5px] font-mono transition-colors duration-200 ${
               selectedCategoryId === null ? 'text-sand font-semibold' : 'text-greige'
             }`}
           >
@@ -50,15 +50,15 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
               key={category.id}
               type="button"
               onClick={() => onSelectCategory(category.id)}
-              className={`flex-shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium tracking-wide transition-all select-none border focus:outline-none focus-visible:ring-1 focus-visible:ring-espresso ${
+              className={`flex-shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-medium tracking-wide transition-all duration-200 ease-out active:scale-[0.97] select-none border focus:outline-none focus-visible:ring-1 focus-visible:ring-espresso cursor-pointer ${
                 isSelected
-                  ? 'bg-espresso text-ivory border-espresso shadow-luxury-subtle'
-                  : 'bg-surface text-espresso/70 hover:text-espresso border-borderline hover:border-sand hover:bg-champagne/30'
+                  ? 'bg-espresso text-ivory border-espresso shadow-luxury-subtle font-semibold'
+                  : 'bg-surface text-espresso/75 hover:text-espresso border-borderline hover:border-sand/90 hover:bg-champagne/30'
               }`}
             >
               <span>{category.title}</span>
               <span
-                className={`text-[10.5px] font-mono ${
+                className={`text-[10.5px] font-mono transition-colors duration-200 ${
                   isSelected ? 'text-sand font-semibold' : 'text-greige'
                 }`}
               >

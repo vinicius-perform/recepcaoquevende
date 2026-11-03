@@ -39,7 +39,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
   }
 
   return (
-    <div className="space-y-4 my-6">
+    <div className="space-y-4 my-6 animate-luxury-fade">
       {/* Search Header Bar */}
       <div className="flex items-center justify-between flex-wrap gap-3 pb-3 border-b border-borderline">
         <div className="text-[11px] uppercase tracking-widest text-greige font-medium">
@@ -48,7 +48,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
         <button
           type="button"
           onClick={onClear}
-          className="text-xs font-sans text-cocoa hover:text-espresso underline decoration-sand underline-offset-4 transition-colors font-medium"
+          className="text-xs font-sans text-cocoa hover:text-espresso underline decoration-sand underline-offset-4 transition-colors duration-200 font-medium cursor-pointer"
         >
           Limpar busca e ver os 3 packs
         </button>

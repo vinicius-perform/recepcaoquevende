@@ -85,14 +85,14 @@ export const PackAccordion: React.FC<PackAccordionProps> = ({
         {/* Minimal Hairline Expand Button */}
         <div className="flex-shrink-0 pt-1.5 sm:pt-2">
           <div
-            className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-sand/70 flex items-center justify-center transition-all duration-250 ${
+            className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-sand/70 flex items-center justify-center transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isOpen
                 ? 'bg-espresso text-ivory border-espresso shadow-sm'
                 : 'bg-surface text-espresso group-hover:bg-champagne/40 group-hover:border-cocoa/40'
             }`}
           >
             <ChevronDown
-              className={`w-4 h-4 sm:w-4.5 sm:h-4.5 transition-transform duration-250 stroke-[1.8] ${
+              className={`w-4 h-4 sm:w-4.5 sm:h-4.5 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] stroke-[1.8] ${
                 isOpen ? 'transform rotate-180 text-ivory' : 'text-espresso'
               }`}
             />
@@ -100,50 +100,57 @@ export const PackAccordion: React.FC<PackAccordionProps> = ({
         </div>
       </button>
 
-      {/* Expanded Inner Library Content */}
-      {isOpen && (
-        <div
-          id={`pack-content-${pack.id}`}
-          className="px-4 sm:px-8 pb-8 pt-3 border-t border-borderline/80 bg-surface/40"
-        >
-          {/* Category Filter Navigation */}
-          <div className="pt-2 pb-5 border-b border-borderline/70">
-            <div className="text-[10.5px] uppercase tracking-[0.16em] text-greige font-medium mb-2.5">
-              Categorias do Pack {pack.number}:
-            </div>
-            <CategoryFilter
-              categories={pack.categories}
-              selectedCategoryId={selectedCategoryId}
-              onSelectCategory={setSelectedCategoryId}
-              getCategoryCount={getCategoryCount}
-              totalPackCount={scripts.length}
-            />
-          </div>
-
-          {/* Situations List */}
-          <div className="pt-5 space-y-3.5">
-            <div className="flex items-center justify-between text-[11px] uppercase tracking-wider text-greige font-medium px-1 mb-1">
-              <span>
-                {selectedCategoryId
-                  ? `${pack.categories.find((c) => c.id === selectedCategoryId)?.title} (${filteredScripts.length})`
-                  : `Todas as situações do Pack ${pack.number} (${filteredScripts.length})`}
-              </span>
-              <span className="hidden sm:inline normal-case text-greige/80 text-xs">
-                Selecione para visualizar e copiar a resposta
-              </span>
-            </div>
-
-            {filteredScripts.map((script, index) => (
-              <ScriptAccordion
-                key={script.id}
-                script={script}
-                category={getCategoryForScript(script.categoryId)}
-                isOpenDefault={index === 0}
+      {/* Expanded Inner Library Content with Smooth Transition */}
+      <div
+        id={`pack-content-${pack.id}`}
+        className="accordion-grid"
+        data-state={isOpen ? 'open' : 'closed'}
+        aria-hidden={!isOpen}
+      >
+        <div className="accordion-inner">
+          <div className="accordion-content px-4 sm:px-8 pb-8 pt-3 border-t border-borderline/80 bg-surface/40">
+            {/* Category Filter Navigation */}
+            <div className="pt-2 pb-5 border-b border-borderline/70">
+              <div className="text-[10.5px] uppercase tracking-[0.16em] text-greige font-medium mb-2.5">
+                Categorias do Pack {pack.number}:
+              </div>
+              <CategoryFilter
+                categories={pack.categories}
+                selectedCategoryId={selectedCategoryId}
+                onSelectCategory={setSelectedCategoryId}
+                getCategoryCount={getCategoryCount}
+                totalPackCount={scripts.length}
               />
-            ))}
+            </div>
+
+            {/* Situations List with smooth category switch animation */}
+            <div
+              key={selectedCategoryId || 'all'}
+              className="pt-5 space-y-3.5 animate-luxury-fade"
+            >
+              <div className="flex items-center justify-between text-[11px] uppercase tracking-wider text-greige font-medium px-1 mb-1">
+                <span className="transition-colors duration-200">
+                  {selectedCategoryId
+                    ? `${pack.categories.find((c) => c.id === selectedCategoryId)?.title} (${filteredScripts.length})`
+                    : `Todas as situações do Pack ${pack.number} (${filteredScripts.length})`}
+                </span>
+                <span className="hidden sm:inline normal-case text-greige/80 text-xs">
+                  Selecione para visualizar e copiar a resposta
+                </span>
+              </div>
+
+              {filteredScripts.map((script, index) => (
+                <ScriptAccordion
+                  key={script.id}
+                  script={script}
+                  category={getCategoryForScript(script.categoryId)}
+                  isOpenDefault={index === 0}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };
